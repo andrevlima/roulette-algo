@@ -62,6 +62,14 @@ Doubles the current bets:
 roulette.redoLastBets();
 ```
 
+## Strategies
+
+You can use this to run backtests of strategies. Some examples are in the folder `/strategies` where you can find them, use or modify.
+To run any of them, (e.g martingale.js) use:
+
+```bash
+node -r esm martigale.js
+```
 
 ## Tests
 
