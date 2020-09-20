@@ -1,6 +1,6 @@
 import { Chip, Roulette } from '../roulette-algo';
 
-
+const INITIAL_BALANCE = 500;
 
 class BalanceError extends Error {
     constructor(message) {
@@ -10,7 +10,7 @@ class BalanceError extends Error {
     }
 }
 const user = (() => {
-    let balance = 1000;
+    let balance = INITIAL_BALANCE;
     let higherBal = balance;
 
     const checkBalance = (chips) => {
@@ -57,15 +57,16 @@ while (true) {
             for(let i = 0; i<martingaleLevel; i++) {
                 roulette.doubleBets();
             }
-            
-            const totalNeeded = roulette.getAllBets().reduce((curr, bet) => {
-                return curr + bet.chip.value;
-            }, 0);
-            user.withdraw(totalNeeded);
         } else {
             bet();
-            user.withdraw(1);
         }
+
+        const totalNeeded = roulette.getAllBets().reduce((curr, bet) => {
+            return curr + bet.chip.value;
+        }, 0);
+
+        user.withdraw(totalNeeded);
+
     } catch (ex) {
         if (ex instanceof BalanceError) {
             console.log(ex.message);
