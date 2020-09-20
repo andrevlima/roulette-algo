@@ -36,11 +36,12 @@ Results is an object returned by the roulette with all results of the "round":
 results.number // Roulette drawn number
 results.spent; // Amount of chips spent
 results.received; // All chips received includes the ones you bet
-results.balance; // received - spent (Can be negative)
+results.total; // received - spent (Can be negative)
 results.hasWon // Boolean, if balance is positive
 results.hasLost // Boolean, if balance is negative
 results.hasDraw // Boolean, if balance is zero
 results.wonBets // List of won bets made
+results.betsMade // List of bets made
 ```
 
 More than this, the roulette also provide extra features such as the possibility to redo the last bets and double the current ones.
