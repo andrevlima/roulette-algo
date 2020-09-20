@@ -2,6 +2,8 @@
 
 Full algorithmn of european roulette.
 
+![roulette game](http://www.casinogamespro.com/wp-content/uploads/2009/10/european_roulette_table_layout.svg "Roulette game example")
+
 First of all import `/roulette-algo.js` to your module and then instanciate a new `Roulette`:
 
 ```js
