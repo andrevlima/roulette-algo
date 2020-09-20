@@ -63,3 +63,17 @@ roulette.redoLastBets();
 ## Tests
 
 All tests are under folder `/tests`, every test instanciate a `Roulette` and run tests over this. 
+
+To run any examples on Node you should run it using ESM:
+```bash
+node -r esm "test-file-here.js"
+```
+If you have any errors use:
+```bash
+npm i
+```
+
+
+## Compatibily
+
+All the code is made using ECMAScript 6+, if you intend to run it on older versions you may need transpiler like Babel 
