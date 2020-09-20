@@ -83,6 +83,5 @@ All the code is made using ECMAScript 6+, if you intend to run it on older versi
 ## Next Objectives
 
 - Include all JS Docs
-- Run tests automatically
 - Include out-of-box retro compactibilty with Babel
 - Bets by player with full distinction 
