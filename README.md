@@ -62,15 +62,16 @@ roulette.redoLastBets();
 
 ## Tests
 
-All tests are under folder `/tests`, every test instanciate a `Roulette` and run tests over this. 
+All tests are under folder `/tests`, every test instanciate a `Roulette` and run tests over this.
+Tests are integrated with Mocha. 
 
-To run any examples on Node you should run it using ESM:
-```bash
-node -r esm "test-file-here.js"
-```
-If you have any errors use:
+Don't forget to install modules needed first:
 ```bash
 npm i
+```
+To run tests use
+```bash
+npm test
 ```
 
 
