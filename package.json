@@ -1,0 +1,13 @@
+{
+  "name": "roulettealgo",
+  "version": "1.0.0",
+  "description": "Roulette Algorithm",
+  "main": "roulette-algo.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "node -r esm test.js"
+  },
+  "author": "Andre Vinicius Lima",
+  "license": "MIT"
+}
