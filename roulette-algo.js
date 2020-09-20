@@ -14,12 +14,14 @@ function getRandomInt(min, max) {
 class Roulette {
     constructor() {
         this.bets = [];
+        this._lastBets = [];
 
         const getBetsMap = () => {
             const betsMap = {};
             this.bets.forEach((bet) => {
                 bet.positions.forEach((pos) => {
-                    betsMap[bet] = betsMap[pos] || [];
+                    const { odds,chip } = bet;
+                    betsMap[pos] = betsMap[pos] || [];
                     betsMap[pos].push({
                         odds, chip
                     });
@@ -31,16 +33,10 @@ class Roulette {
         const insertBet = (positions, chip) => {
             const odds = 36 / positions.length;
             this.bets.push({ chip, odds, positions });
-            // positions.forEach((pos) => {
-            //     this.betsMap[pos] = this.betsMap[pos] || [];
-            //     this.betsMap[pos].push({
-            //         odds, chip
-            //     });
-            // });
         }
 
         this.getBets = (position) => {
-            return this.betsMap[position] || [];
+            return getBetsMap()[position] || [];
         }
 
         this.putOn = {
@@ -104,8 +100,23 @@ class Roulette {
     }
 
     cleanBets() {
-        this.betsMap = {};
+        this._lastBets = this.bets;
         this.bets = [];
+    }
+
+    lastBetsMade() {
+        this._lastBets;
+    }
+
+    redoLastBets() {
+        this.bets = this._lastBets;
+    }
+
+    doubleBets() {
+        const originalBets = [...this.bets];
+        originalBets.forEach((bet) => {
+            this.bets.push(Object.assign({}, bet));
+        });
     }
 
     spin() {
@@ -124,13 +135,15 @@ class Roulette {
         console.log(`Lucky number is: ${number}`);
         console.log(`Chips Bet: ${betsMade.length}`);
         console.log(`\tSpent: ${spent}`);
-        console.log(`\tProfit: ${gain}`);
+        console.log(`\tReceived: ${gain}`);
         console.log(`\tBalance: ${totalSign}${total}`);
 
         this.cleanBets();
 
         return {
             number, wonBets, betsMade, spent, gain, total,
+            received: gain,
+            balance: total,
             hasLost: total < 0,
             hasWon: total > 0,
             hasDraw: total == 0,
