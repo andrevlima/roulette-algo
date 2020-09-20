@@ -41,12 +41,18 @@ const user = (() => {
 const roulette = new Roulette();
 
 let martingaleLevel = 0;
-
+let direction = true;
 while (true) {
     console.log("\n");
 
     const bet = () => {
-        roulette.putOn.rightHalf(new Chip(1));
+        if(direction) {
+            roulette.putOn.rightHalf(new Chip(1));
+        } else {
+            roulette.putOn.leftHalf(new Chip(1));
+        }
+
+        direction != direction;
     }
 
     try {
