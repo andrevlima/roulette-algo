@@ -178,8 +178,6 @@ class Roulette {
         }, 0);
         const total = received - spent;
 
-        this.cleanBets();
-
         let result = {
             number, wonBets, betsMade, spent, total, received,
             hasLost: total < 0,
@@ -188,6 +186,8 @@ class Roulette {
         }
 
         this._lastResults = result;
+
+        this.cleanBets();
 
         return result;
     }
