@@ -191,6 +191,10 @@ class Roulette {
 
         return result;
     }
+
+    spinsCounter() {
+        return this._spinsCounter;
+    }
 }
 
 class Chip {
