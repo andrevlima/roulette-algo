@@ -132,11 +132,11 @@ class Roulette {
         const total = gain - spent;
         const totalSign = total > 0 ? '+' : total > 0 ? '-' : '';
 
-        console.log(`Lucky number is: ${number}`);
-        console.log(`Chips Bet: ${betsMade.length}`);
-        console.log(`\tSpent: ${spent}`);
-        console.log(`\tReceived: ${gain}`);
-        console.log(`\tBalance: ${totalSign}${total}`);
+        // console.log(`Lucky number is: ${number}`);
+        // console.log(`Chips Bet: ${betsMade.length}`);
+        // console.log(`\tSpent: ${spent}`);
+        // console.log(`\tReceived: ${gain}`);
+        // console.log(`\tBalance: ${totalSign}${total}`);
 
         this.cleanBets();
 
