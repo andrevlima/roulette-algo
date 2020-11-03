@@ -59,7 +59,7 @@ roulette.redoLastBets();
 
 Doubles the current bets:
 ```js
-roulette.redoLastBets();
+roulette.doubleBets();
 ```
 
 ## Strategies
