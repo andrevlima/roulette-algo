@@ -129,7 +129,7 @@ class Roulette {
     }
 
     lastBetsMade() {
-        this._lastBets;
+        return Object.assign({}, this._lastBets);
     }
 
     redoLastBets() {
