@@ -15,11 +15,11 @@ const roulette = new Roulette();
 All possible bets are on `putOn` object provided in roulette instance, take the example:
 
 ```js
+roulette.putOn.single(new Chip(10), 15); // Puts a chip 10 on number 15
 roulette.putOn.reds(new Chip(1)); // Puts chip 1 on reds
 roulette.putOn.zero(new Chip(1)); // Puts chip 1 on zero
-roulette.putOn.single(new Chip(10), 15); // Puts a chip 10 on number 15
-roulette.putOn.rightHalf(new Chip(2), 15); // Puts a chip 2 on numbers 19-36
-roulette.putOn.firstTwelve(new Chip(2), 15); // Puts a chip 2 on numbers 1-12 (1st dozen)
+roulette.putOn.rightHalf(new Chip(2)); // Puts a chip 2 on numbers 19-36
+roulette.putOn.firstTwelve(new Chip(2)); // Puts a chip 2 on numbers 1-12 (1st dozen)
 roulette.putOn.double(new Chip(2), 1, 2); // Puts a chip 2 on middle of 1 and 2
 roulette.putOn.quarter(new Chip(10), 17, 20, 16, 19); // Puts a chip 10 on middle of 17, 20, 16 and 19
 
